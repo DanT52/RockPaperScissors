@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+    // Your JavaScript goes here!
+  
+
+    function computerPlay(){
+        let things = ["rock", "paper", "scissors"]
+        let thing = things[Math.floor(Math.random() * things.length)]
+        return thing
+    }
+
+    function playRound(playerSelection, computerSelection){
+        if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
+            return "Player Wins"
+        } else if (playerSelection == computerSelection) {
+            return "Tie"
+        }else{
+            return "Computer Wins"
+        }
+    }
+
+    function playerSelect(){
+        return (prompt("Choose: ")).toLowerCase()
+    }
+
+    function game(){
+        let compScore = 0
+        let playerScore = 0
+        while (compScore < 3 && playerScore < 3){
+            let playerSelection = playerSelect()
+            let computerSelection = computerPlay()
+            let result = playRound(playerSelection, computerSelection)
+            if (result == "Player Wins"){
+                playerScore++
+                console.log(`Player Wins, ${playerSelection} beats ${computerSelection}`) 
+            }else if(result == "Tie"){
+                console.log(`Tie! both Player and computer selected ${playerSelection}`)
+
+            }else{
+                compScore++
+                console.log(`Computer Wins, ${playerSelection} Loses to ${computerSelection}`)
+            }
+            
+
+        }
+
+        if (compScore == 3){
+            console.log(`COMPUTER WINS FINAL SCORE,  Player: ${playerScore},  Computer: ${compScore}`)
+        }else{
+            console.log(`PLAYER WINS FINAL SCORE,  Player: ${playerScore},  Computer: ${compScore}`)
+        }
+
+    }
+
+    game()
+
+
+
+
+
+
+
+  </script>
+</body>
+</html>

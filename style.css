@@ -1,0 +1,49 @@
+.rock, .paper,.scissors {
+    margin: 0 auto;
+    margin: 2em;
+
+    width: 80px;
+    height: 80px;
+    background: orange
+    
+   
+}
+.scissors:hover{
+    background: rgb(238, 199, 128);
+    
+}
+.rock:hover{
+    background: rgb(238, 199, 128);
+}
+.paper:hover{
+    background: rgb(238, 199, 128);
+}
+.buttons {
+    display: flex;
+}
+
+.compturn{
+    margin: 1em;
+    background: rgb(216, 216, 216);
+    height: 40px;
+}
+
+.showscore{
+    margin: 1em;
+    background: rgb(190, 236, 208);
+    height: 35px;
+}
+
+.pick{
+    background: rgb(199, 167, 230);
+}
+
+.win{
+    font-weight: bold;
+    margin: 3em;
+}
+
+body {
+    max-width: max-content;
+    margin: auto;
+    }

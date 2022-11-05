@@ -1,71 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel = "stylesheet" href="style.css">
   <meta charset="UTF-8">
-  <title>Page Title</title>
+  <script src="javascript.js" defer></script>
+  <title>Rock Paper Sizzors</title>
 </head>
 <body>
-  <script>
-    // Your JavaScript goes here!
-  
+<h1> Rock Paper Sizzors</h1>
+<p> Play a game of rock paper sizzors with computer, first to 3 points wins</p>
 
-    function computerPlay(){
-        let things = ["rock", "paper", "scissors"]
-        let thing = things[Math.floor(Math.random() * things.length)]
-        return thing
-    }
+<p>Round number: </p><p class="roundnum">0</p>
 
-    function playRound(playerSelection, computerSelection){
-        if (playerSelection == "rock" && computerSelection == "scissors" || playerSelection == "paper" && computerSelection == "rock" || playerSelection == "scissors" && computerSelection == "paper") {
-            return "Player Wins"
-        } else if (playerSelection == computerSelection) {
-            return "Tie"
-        }else{
-            return "Computer Wins"
-        }
-    }
+<div class="buttons">
+    <div class="rock">rock</div>
+    <div class="paper">paper</div>
+    <div class="scissors">scissors</div>
+</div>
 
-    function playerSelect(){
-        return (prompt("Choose: ")).toLowerCase()
-    }
+<div class="win"></div>
 
-    function game(){
-        let compScore = 0
-        let playerScore = 0
-        while (compScore < 3 && playerScore < 3){
-            let playerSelection = playerSelect()
-            let computerSelection = computerPlay()
-            let result = playRound(playerSelection, computerSelection)
-            if (result == "Player Wins"){
-                playerScore++
-                console.log(`Player Wins, ${playerSelection} beats ${computerSelection}`) 
-            }else if(result == "Tie"){
-                console.log(`Tie! both Player and computer selected ${playerSelection}`)
+<div class ="compick">
+    computer picks: <p class="pick">Waiting for player...</p>
+</div>
+<div class="comp">
+    <p>round result: </p>
+    <div class="compturn">N/A</div>
 
-            }else{
-                compScore++
-                console.log(`Computer Wins, ${playerSelection} Loses to ${computerSelection}`)
-            }
-            
+</div>
 
-        }
-
-        if (compScore == 3){
-            console.log(`COMPUTER WINS FINAL SCORE,  Player: ${playerScore},  Computer: ${compScore}`)
-        }else{
-            console.log(`PLAYER WINS FINAL SCORE,  Player: ${playerScore},  Computer: ${compScore}`)
-        }
-
-    }
-
-    game()
+<div class="score">
+<p>Score:</p>
+<div class="showscore">Computer: 0,  Player: 0</div>
 
 
-
-
-
-
-
-  </script>
 </body>
-</html>
